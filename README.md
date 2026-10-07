@@ -1,6 +1,6 @@
-# App Store Review Scrapper
+# App Store Review Scraper
 
-[![License: MIT](https://img.shields.io/github/license/aerodiduch/review-scrapper)](LICENSE) ![Python](https://img.shields.io/badge/python-3776AB?logo=python&logoColor=white)
+[![License: MIT](https://img.shields.io/github/license/aerodiduch/review-scraper)](LICENSE) ![Python](https://img.shields.io/badge/python-3776AB?logo=python&logoColor=white)
 
 [Español](README.es.md)
 
@@ -9,8 +9,8 @@ A Python script that downloads the reviews of an app from Apple's App Store and 
 ## Install
 
 ```sh
-git clone https://github.com/aerodiduch/review-scrapper
-cd review-scrapper
+git clone https://github.com/aerodiduch/review-scraper
+cd review-scraper
 pip install -r requirements.txt
 ```
 
