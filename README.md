@@ -1,50 +1,40 @@
-
 # App Store Review Scrapper
 
-A simple Python script to gather reviws from an application from Apple's App Store and save it's reviews to a ``.csv`` file.
+[![License: MIT](https://img.shields.io/github/license/aerodiduch/review-scrapper)](LICENSE) ![Python](https://img.shields.io/badge/python-3776AB?logo=python&logoColor=white)
 
+[Español](README.es.md)
 
-## Run locally
+A Python script that downloads the reviews of an app from Apple's App Store and saves them to a CSV, ready for analysis.
 
-Clone the project
+## Install
 
-```bash
-  git clone https://github.com/aerodiduch/review-scrapper
+```sh
+git clone https://github.com/aerodiduch/review-scrapper
+cd review-scrapper
+pip install -r requirements.txt
 ```
 
-Go to the project directory
+## Usage
 
-```bash
-  cd review-scrapper
-```
+1. Open `main.py` and, in the last lines, fill in the app's country, name and id. All three are in the app's App Store link. For Slack, `https://apps.apple.com/us/app/slack/id618783545` gives:
 
-Install dependencies
+   ```python
+   app = get_reviews(country='us', app_name='slack', app_id=618783545)
+   ```
 
-```bash
-  pip install -r requirements.txt
-```
+   Long names with dashes, like `my-super-long-app-name`, are fine.
+2. Run it:
 
-Now, inside `main.py` you have to specify three variables
+   ```sh
+   python main.py
+   ```
 
-- App country
-- App full name
-- App id
+   The reviews end up in `data.csv`, in the same folder.
 
-These three items can be found by simply reading the app's app store link. For example, in Slack URL:
+## How it works
 
-`https://apps.apple.com/us/app/slack/id618783545`
+It fetches the reviews with [app-store-scraper](https://pypi.org/project/app-store-scraper/) and writes the CSV with pandas. The dependencies are pinned to the versions from December 2022.
 
-We can identify that country is `us`, full name is `slack` and id is `618783545`
+## License
 
-Sometimes apps might have a longer name including dashes, that's ok. `my-super-long-app-name` is as valid as `foo`.
-
-Then, simply run the script and results will be dumped to a `.csv` in the current directory.
-
-```bash
-  python main.py
-```
-
-```
-2022-12-21 02:22:46,683 [INFO] Base - Initialised: AppStore('country', 'name', appId)
-2022-12-21 02:22:46,683 [INFO] Base - Ready to fetch reviews from: ...
-```
+MIT, see [LICENSE](LICENSE).
